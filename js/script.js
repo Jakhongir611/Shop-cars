@@ -1,10 +1,10 @@
-let cars = [{
-  ID: 1,
-  Name: 'Malibu',
-  Garantiya: '1-год',
-  price: 25000,
-  img: "https://kluz-photos.kcdn.online/webp/7f/7fa61fed-7e61-4c44-ab2a-715ec3d89d32/1-408x306.jpg",
-  features: {
+let cars = [{ // общий массив
+  ID: 1, // Id объекта
+  Name: 'Malibu', // название машины
+  Garantiya: '1-год', // срок гарантии
+  price: 25000, // цена
+  img: "https://kluz-photos.kcdn.online/webp/7f/7fa61fed-7e61-4c44-ab2a-715ec3d89d32/1-408x306.jpg", // вид машины
+  features: { // характеристики
     engine_capacity: 'Объем 2 л Мощность 137 л. с.',
     consumption: 'Расход 8-9 л Тип топлива Бензин АИ-95.',
     seats: 'Кол-во мест 5 мест Кол-во дверей 4 двери',
@@ -87,26 +87,25 @@ let cars = [{
 
 
 
-let conf = confirm('Хотите ли вы приобрести машину?')
-if (conf == true) {
-  let kupi = prompt('Выберите ID машины что-бы купить \n"Malibu №1" "Cobalt №2" "Lacetti №3" "Onix №4" "Nexia №5"')
-  if(kupi == cars[0].ID) {
+let conf = confirm('Хотите ли вы приобрести машину?') // просит 'Хотите ли вы приобрести машину?'
+if (conf == true) { // если да то следуюшие действия
+  let kupi = prompt('Выберите ID машины что-бы купить \n"Malibu №1" "Cobalt №2" "Lacetti №3" "Onix №4" "Nexia №5"') // введите Id или название машины
+  if(kupi == cars[0].ID || kupi == 'Malibu') { // если да то следуюшие действия
     let xaracter_mal = cars[0].features
-    let xaracter_alr = Object.values(xaracter_mal)
-    alert(xaracter_alr)
-    let tochno = confirm('Xотите ли вы ее купить')
-    if (tochno == true){
-      alert('Поздравляем вас с покупкой вы купили "Malibu"')
-      alert(xaracter_alr)
-      let link = document.createElement('a');
-      link.innerHTML = `<img src="${cars[0].img}">`;
-      document.querySelector('.li').append(link);
-      // document.text(cars[0].img)
+    let xaracter_alr = Object.values(xaracter_mal) // вывоже характеристики в алерт
+    alert(xaracter_alr) // вывоже характеристики в алерт
+    let tochno = confirm('Xотите ли вы ее купить') // в конфирм спрашивает 'Xотите ли вы ее купить'
+    if (tochno == true){ // если вы ответилли да то
+      alert('Поздравляем вас с покупкой вы купили "Malibu"') // Поздравляет вас с покупкой и далее
+      alert(xaracter_alr) // ещё раз показывает характеристики
+      let link = document.createElement('a'); // ссоздаю ссылку
+      link.innerHTML = `<img src="${cars[0].img}">`; // добавляю фото машины
+      document.querySelector('.li').append(link); // и показываю в HTML
     }else{
-      let prichina = prompt('Почему вы передумали покупать машину')
+      let prichina = prompt('Почему вы передумали покупать машину') // если вы ответили нет то пишите причину отказа
       console.log(prichina);
     }
-  }else if(kupi == cars[1].ID) {
+  }else if(kupi == cars[1].ID || kupi == 'Cobalt') {
     let xaracter_mal = cars[1].features
     let xaracter_alr = Object.values(xaracter_mal)
     alert(xaracter_alr)
@@ -122,7 +121,7 @@ if (conf == true) {
       let prichina = prompt('Почему вы передумали покупать машину')
       console.log(prichina);
     }
-  }else if(kupi == cars[2].ID) {
+  }else if(kupi == cars[2].ID || kupi == 'Lacetti') {
     let xaracter_mal = cars[2].features
     let xaracter_alr = Object.values(xaracter_mal)
     alert(xaracter_alr)
@@ -138,7 +137,7 @@ if (conf == true) {
       let prichina = prompt('Почему вы передумали покупать машину')
       console.log(prichina);
     }
-  }else if(kupi == cars[3].ID) {
+  }else if(kupi == cars[3].ID || kupi == 'Onix') {
     let xaracter_mal = cars[3].features
     let xaracter_alr = Object.values(xaracter_mal)
     alert(xaracter_alr)
@@ -154,7 +153,7 @@ if (conf == true) {
       let prichina = prompt('Почему вы передумали покупать машину')
       console.log(prichina);
     }
-  }else if(kupi == cars[4].ID) {
+  }else if(kupi == cars[4].ID || kupi == 'Nexia') {
     let xaracter_mal = cars[4].features
     let xaracter_alr = Object.values(xaracter_mal)
     alert(xaracter_alr)
